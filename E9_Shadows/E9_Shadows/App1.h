@@ -21,7 +21,6 @@ public:
 protected:
 	bool render();
 	void depthPass();
-	void secondPass();
 	void finalPass();
 	void orthoDepthPass();
 	void gui();
@@ -31,6 +30,9 @@ private:
 
 	PlaneMesh* mesh;
 	OrthoMesh* orthoMesh;
+	CubeMesh* cube;
+	SphereMesh* sphere;
+
 
 	Light* light;
 	AModel* model;
@@ -39,6 +41,7 @@ private:
 	RenderTexture* orthoRenderTexture;
 
 	ShadowMap* shadowMap;
+	float time = 0;
 };
 
 #endif
