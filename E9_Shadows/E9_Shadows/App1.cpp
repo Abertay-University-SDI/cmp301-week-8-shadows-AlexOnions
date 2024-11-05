@@ -266,7 +266,9 @@ void App1::gui()
 	renderer->getDeviceContext()->DSSetShader(NULL, NULL, 0);
 
 
-
+	float pos[3] = { light->getPosition().x,light->getPosition().y,light->getPosition().z };
+	ImGui::SliderFloat3("Light Position", pos, -20, 20);
+	light->setPosition(pos[0], pos[1], pos[2]);
 
 	float dir[3] = { light->getDirection().x,light->getDirection().y,light->getDirection().z };
 	ImGui::SliderFloat3("Light Direction", dir, -1, 1);
